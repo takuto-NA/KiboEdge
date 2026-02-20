@@ -1,0 +1,215 @@
+[
+  {
+    "case_identifier": "sfx_01_happy",
+    "user_prompt": "うれしい気分を表す効果音を鳴らして",
+    "expected_tool_name": "play_sound_effect",
+    "required_argument_keys": ["event_name", "intensity"],
+    "tags": ["sfx"]
+  },
+  {
+    "case_identifier": "sfx_02_alert",
+    "user_prompt": "注意喚起の効果音をお願いします",
+    "expected_tool_name": "play_sound_effect",
+    "required_argument_keys": ["event_name", "intensity"],
+    "tags": ["sfx"]
+  },
+  {
+    "case_identifier": "sfx_03_sad",
+    "user_prompt": "悲しい感じの効果音にして",
+    "expected_tool_name": "play_sound_effect",
+    "required_argument_keys": ["event_name", "intensity"],
+    "tags": ["sfx"]
+  },
+  {
+    "case_identifier": "sfx_04_success",
+    "user_prompt": "タスク完了っぽい効果音を鳴らして",
+    "expected_tool_name": "play_sound_effect",
+    "required_argument_keys": ["event_name", "intensity"],
+    "tags": ["sfx"]
+  },
+  {
+    "case_identifier": "cal_create_01_meeting",
+    "user_prompt": "明日10時から11時でチーム定例をカレンダー登録して",
+    "expected_tool_name": "create_calendar_event",
+    "required_argument_keys": ["title", "start_datetime", "end_datetime"],
+    "tags": ["calendar_create"]
+  },
+  {
+    "case_identifier": "cal_create_02_lunch",
+    "user_prompt": "来週火曜12:00-13:00でランチ予定を追加して",
+    "expected_tool_name": "create_calendar_event",
+    "required_argument_keys": ["title", "start_datetime", "end_datetime"],
+    "tags": ["calendar_create"]
+  },
+  {
+    "case_identifier": "cal_create_03_offline",
+    "user_prompt": "2/25の15時から16時でオフライン会議を登録して、場所は渋谷",
+    "expected_tool_name": "create_calendar_event",
+    "required_argument_keys": ["title", "start_datetime", "end_datetime"],
+    "optional_argument_keys": ["location"],
+    "tags": ["calendar_create"]
+  },
+  {
+    "case_identifier": "cal_create_04_deadline",
+    "user_prompt": "明後日18時までの提出期限を予定として入れて",
+    "expected_tool_name": "create_calendar_event",
+    "required_argument_keys": ["title", "start_datetime", "end_datetime"],
+    "tags": ["calendar_create"]
+  },
+  {
+    "case_identifier": "cal_read_01_today",
+    "user_prompt": "今日から明日までの予定を確認して",
+    "expected_tool_name": "read_calendar_events",
+    "required_argument_keys": ["start_date", "end_date"],
+    "tags": ["calendar_read"]
+  },
+  {
+    "case_identifier": "cal_read_02_week",
+    "user_prompt": "今週のカレンダーを見せて",
+    "expected_tool_name": "read_calendar_events",
+    "required_argument_keys": ["start_date", "end_date"],
+    "tags": ["calendar_read"]
+  },
+  {
+    "case_identifier": "cal_read_03_next_week",
+    "user_prompt": "来週の予定を読み込んで",
+    "expected_tool_name": "read_calendar_events",
+    "required_argument_keys": ["start_date", "end_date"],
+    "tags": ["calendar_read"]
+  },
+  {
+    "case_identifier": "cal_read_04_month",
+    "user_prompt": "今月の予定一覧を確認したい",
+    "expected_tool_name": "read_calendar_events",
+    "required_argument_keys": ["start_date", "end_date"],
+    "tags": ["calendar_read"]
+  },
+  {
+    "case_identifier": "todo_create_01_priority_high",
+    "user_prompt": "TODOに『資料提出』を優先度高で追加して",
+    "expected_tool_name": "create_todo_task",
+    "required_argument_keys": ["task_title", "priority"],
+    "tags": ["todo_create"]
+  },
+  {
+    "case_identifier": "todo_create_02_priority_normal",
+    "user_prompt": "TODOへ『洗濯』を通常優先度で登録",
+    "expected_tool_name": "create_todo_task",
+    "required_argument_keys": ["task_title", "priority"],
+    "tags": ["todo_create"]
+  },
+  {
+    "case_identifier": "todo_create_03_with_due",
+    "user_prompt": "TODOに『請求書確認』を明日締切で追加",
+    "expected_tool_name": "create_todo_task",
+    "required_argument_keys": ["task_title", "priority"],
+    "optional_argument_keys": ["due_date"],
+    "tags": ["todo_create"]
+  },
+  {
+    "case_identifier": "todo_read_01_open",
+    "user_prompt": "未完了TODOを読んで",
+    "expected_tool_name": "read_todo_tasks",
+    "required_argument_keys": ["status"],
+    "tags": ["todo_read"]
+  },
+  {
+    "case_identifier": "todo_read_02_done",
+    "user_prompt": "完了したTODOだけ見せて",
+    "expected_tool_name": "read_todo_tasks",
+    "required_argument_keys": ["status"],
+    "tags": ["todo_read"]
+  },
+  {
+    "case_identifier": "todo_read_03_filter",
+    "user_prompt": "TODOから『資料』を含むタスクを探して",
+    "expected_tool_name": "read_todo_tasks",
+    "required_argument_keys": ["status"],
+    "optional_argument_keys": ["filter_text"],
+    "tags": ["todo_read"]
+  },
+  {
+    "case_identifier": "weather_01_tokyo_tomorrow",
+    "user_prompt": "東京の明日の天気を教えて",
+    "expected_tool_name": "get_weather",
+    "required_argument_keys": ["location", "date"],
+    "tags": ["weather"]
+  },
+  {
+    "case_identifier": "weather_02_osaka_today",
+    "user_prompt": "大阪の今日の天気を取得して",
+    "expected_tool_name": "get_weather",
+    "required_argument_keys": ["location", "date"],
+    "tags": ["weather"]
+  },
+  {
+    "case_identifier": "weather_03_sapporo_weekend",
+    "user_prompt": "札幌の週末の天気は？",
+    "expected_tool_name": "get_weather",
+    "required_argument_keys": ["location", "date"],
+    "tags": ["weather"]
+  },
+  {
+    "case_identifier": "news_01_ai_today",
+    "user_prompt": "AI関連の今日のニュースを読んで",
+    "expected_tool_name": "get_news",
+    "required_argument_keys": ["topic", "timeframe"],
+    "tags": ["news"]
+  },
+  {
+    "case_identifier": "news_02_economy_week",
+    "user_prompt": "経済ニュースを今週分で取得して",
+    "expected_tool_name": "get_news",
+    "required_argument_keys": ["topic", "timeframe"],
+    "tags": ["news"]
+  },
+  {
+    "case_identifier": "news_03_security_latest",
+    "user_prompt": "セキュリティの最新ニュースを確認したい",
+    "expected_tool_name": "get_news",
+    "required_argument_keys": ["topic", "timeframe"],
+    "tags": ["news"]
+  },
+  {
+    "case_identifier": "db_read_01_user",
+    "user_prompt": "usersテーブルのuser_001を読んで",
+    "expected_tool_name": "read_database_record",
+    "required_argument_keys": ["table_name", "key"],
+    "tags": ["db_read"]
+  },
+  {
+    "case_identifier": "db_read_02_order",
+    "user_prompt": "ordersテーブルのorder_1001を取得",
+    "expected_tool_name": "read_database_record",
+    "required_argument_keys": ["table_name", "key"],
+    "tags": ["db_read"]
+  },
+  {
+    "case_identifier": "db_read_03_setting",
+    "user_prompt": "settingsテーブルからthemeキーを読みたい",
+    "expected_tool_name": "read_database_record",
+    "required_argument_keys": ["table_name", "key"],
+    "tags": ["db_read"]
+  },
+  {
+    "case_identifier": "db_write_01_user_profile",
+    "user_prompt": "usersにuser_002のプロフィールを書き込んで",
+    "expected_tool_name": "write_database_record",
+    "required_argument_keys": ["table_name", "key", "payload"],
+    "tags": ["db_write"]
+  },
+  {
+    "case_identifier": "db_write_02_order_status",
+    "user_prompt": "ordersのorder_2002に配送済みを保存して",
+    "expected_tool_name": "write_database_record",
+    "required_argument_keys": ["table_name", "key", "payload"],
+    "tags": ["db_write"]
+  },
+  {
+    "case_identifier": "db_write_03_feature_flag",
+    "user_prompt": "settingsへfeature_x_enabled=trueを書き込んで",
+    "expected_tool_name": "write_database_record",
+    "required_argument_keys": ["table_name", "key", "payload"],
+    "tags": ["db_write"]
+  }
+]

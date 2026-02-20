@@ -1,0 +1,23 @@
+[project]
+name = "kiboedge-toolcall-kit"
+version = "0.1.0"
+description = "Robust tool-calling runtime and evaluation harness for local LLMs on LM Studio."
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.51.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
